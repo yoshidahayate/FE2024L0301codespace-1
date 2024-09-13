@@ -94,7 +94,7 @@ describe('テスト大項目01', () => {
         //   cy.visit('/')
           cy.waitForResource('/css/index.css')
           // red color means the style from "app.css" has been loaded and applied
-          cy.get('h1', { timeout }).should('have.css', 'color', '#ff69b4')
+          cy.get('h1', { timeout }).should('have.css', 'color', 'rgb(255, 105, 180)')
         })
     })
 })
