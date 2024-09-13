@@ -89,11 +89,13 @@ describe('テスト大項目01', () => {
             cy.get('#title').should('have.text','福岡市の魅力');
         })
         const timeout = 1500 // ms
+        it('テスト小項目04:/css/index.cssファイルが存在するか', () => {
+            // waitForResource defined at
+            // https://github.com/cypress-io/cypress-example-recipes/blob/master/examples/testing-dom__wait-for-resource/cypress/e2e/spec.cy.js
+            cy.waitForResource('/css/index.css')
+        })
 
-        it('テスト小項目04:index.cssでのh1タグの色指定が「#ff69b4」なのか', () => {
-        //   cy.visit('/')
-          cy.waitForResource('/css/index.css')
-          // red color means the style from "app.css" has been loaded and applied
+        it('テスト小項目05:（index.cssにて）h1タグの色指定が「rgb(255, 105, 180)」なのか', () => {
           cy.get('h1', { timeout }).should('have.css', 'color', 'rgb(255, 105, 180)')
         })
     })
