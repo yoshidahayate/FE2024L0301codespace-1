@@ -16,5 +16,13 @@ describe('テスト大項目01', () => {
             // id要素が存在するか
             cy.get('#title').should('have.text','福岡市の魅力');
         })
+        const timeout = 1500 // ms
+
+        it('テスト小項目04:index.cssでのh1タグの色指定が「#ff69b4」なのか', () => {
+        //   cy.visit('/')
+          cy.waitForResource('/css/index.css')
+          // red color means the style from "app.css" has been loaded and applied
+          cy.get('h1', { timeout }).should('have.css', 'color', '#ff69b4')
+        })
     })
 })
