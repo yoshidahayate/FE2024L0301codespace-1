@@ -1,5 +1,6 @@
 name: e2e_test
 on: [push]
+permissions: write-all
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
